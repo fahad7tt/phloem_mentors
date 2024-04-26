@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>763978404775-7o29kjf46j0nn8bn8s3vf8vbmfu5ep07.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.763978404775-7o29kjf46j0nn8bn8s3vf8vbmfu5ep07</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>763978404775-ffdpcbep1jrbkrqqu2lk3kcb546bpjjq.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBEZwvSxvfwsb7ZBr1FzW6ca2Qn3z1GFkA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>763978404775</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.phloemMentors</string>
+	<key>PROJECT_ID</key>
+	<string>phloem-8a7f5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>phloem-8a7f5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:763978404775:ios:a93cd48cbb177ab0951c82</string>
+</dict>
+</plist>

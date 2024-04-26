@@ -1,0 +1,222 @@
+{
+  "project_info": {
+    "project_number": "763978404775",
+    "project_id": "phloem-8a7f5",
+    "storage_bucket": "phloem-8a7f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763978404775:android:2f76ee9f3114a1db951c82",
+        "android_client_info": {
+          "package_name": "com.example.phloem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763978404775-ptm6ghpio7vdb5u8becrfi7lg7lat2bq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phloem",
+            "certificate_hash": "7cecdd3ad51c018dac0194d50795c9c7394d8072"
+          }
+        },
+        {
+          "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWyxMUnh2YCgZ5g9m42rdyLAUheyY708"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "763978404775-2kie75m21e3km5babqck8mjpi4inr9e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phloem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763978404775:android:dec5f7b4c8f3e229951c82",
+        "android_client_info": {
+          "package_name": "com.example.phloem_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763978404775-rckmeo848npg8217jhogopmagn9oitce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phloem_admin",
+            "certificate_hash": "7cecdd3ad51c018dac0194d50795c9c7394d8072"
+          }
+        },
+        {
+          "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWyxMUnh2YCgZ5g9m42rdyLAUheyY708"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "763978404775-2kie75m21e3km5babqck8mjpi4inr9e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phloem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763978404775:android:9271dbafde50b5dd951c82",
+        "android_client_info": {
+          "package_name": "com.example.phloem_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763978404775-ffdpcbep1jrbkrqqu2lk3kcb546bpjjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phloem_app",
+            "certificate_hash": "7cecdd3ad51c018dac0194d50795c9c7394d8072"
+          }
+        },
+        {
+          "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWyxMUnh2YCgZ5g9m42rdyLAUheyY708"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "763978404775-2kie75m21e3km5babqck8mjpi4inr9e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phloem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763978404775:android:1bf47143b69a261b951c82",
+        "android_client_info": {
+          "package_name": "com.example.phloem_learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763978404775-imoa25049e4nj3ef9r96gj4rb9rtm8a1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phloem_learning",
+            "certificate_hash": "7cecdd3ad51c018dac0194d50795c9c7394d8072"
+          }
+        },
+        {
+          "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWyxMUnh2YCgZ5g9m42rdyLAUheyY708"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "763978404775-2kie75m21e3km5babqck8mjpi4inr9e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phloem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763978404775:android:bd6f05328754b029951c82",
+        "android_client_info": {
+          "package_name": "com.example.phloem_mentors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWyxMUnh2YCgZ5g9m42rdyLAUheyY708"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "763978404775-2kie75m21e3km5babqck8mjpi4inr9e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.phloem"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
