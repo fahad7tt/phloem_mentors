@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:phloem_mentors/controller/mentor_controller.dart';
 import 'package:phloem_mentors/model/course_model.dart';
@@ -47,8 +48,7 @@ class MentorHome extends StatelessWidget {
                           image: NetworkImage(mentorData['image']),
                           fit: BoxFit.cover,
                         ),
-                        borderRadius:
-                            BorderRadius.circular(6),
+                        borderRadius: BorderRadius.circular(6),
                         border: Border.all(
                           color: Colors.white,
                           width: 2.0,
@@ -92,124 +92,144 @@ class MentorHome extends StatelessWidget {
           final mentor = Mentor.fromSnapshot(snapshot.data!.docs.first);
 
           // Fetch course details for the mentor
-    return FutureBuilder<List<Course>>(
-      future: MentorProvider().fetchCourses(), // Fetch courses from Firestore
-      builder: (context, courseSnapshot) {
-        if (!courseSnapshot.hasData || courseSnapshot.data!.isEmpty) {
-          return const Center(child: Text('No course data found'));
-        }
+          return FutureBuilder<List<Course>>(
+            future:
+                MentorProvider().fetchCourses(), // Fetch courses from Firestore
+            builder: (context, courseSnapshot) {
+              if (!courseSnapshot.hasData || courseSnapshot.data!.isEmpty) {
+                return const Center(child: Text('No course data found'));
+              }
 
-        Course? mentorCourse;
-        for (var course in courseSnapshot.data!) {
-          if (course.name == mentor.courses) {
-            mentorCourse = course;
-            break;
-          }
-        }
-        
-          return SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                    child: Card(
-                      elevation: 4,
-                      child: Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Welcome ${mentor.name} !!!',
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+              Course? mentorCourse;
+              for (var course in courseSnapshot.data!) {
+                if (course.name == mentor.courses) {
+                  mentorCourse = course;
+                  break;
+                }
+              }
+
+              return SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Card(
+                          elevation: 4,
+                          child: Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Welcome ${mentor.name} !!!',
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(height: 4),
+                                const Text(
+                                  'A platform to record your classes...',
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                              ],
                             ),
-                            const SizedBox(height: 4),
-                            const Text(
-                              'A platform to record your classes...',
-                              style: TextStyle(fontSize: 15),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      RichText(
+                        textAlign: TextAlign.left,
+                        text: TextSpan(
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                          children: <TextSpan>[
+                            const TextSpan(text: 'Course alotted: '),
+                            TextSpan(
+                              text: mentor.courses,
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 243, 33, 44),
+                              ),
+                            ),
+                            TextSpan(
+                              text: mentorCourse?.payment == 'free'
+                                  ? ' (Free)'
+                                  : ' (Paid)',
+                              style: const TextStyle(
+                                color: Colors.green,
+                              ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  RichText(
-                    textAlign: TextAlign.left,
-                    text: TextSpan(
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                      const SizedBox(height: 25),
+                      const Text(
+                        'Modules:',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left,
                       ),
-                      children: <TextSpan>[
-                        const TextSpan(text: 'Course alotted: '),
-                        TextSpan(
-                          text: mentor.courses,
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 243, 33, 44),
-                          ),
-                        ),
-                        TextSpan(
-                        text: mentorCourse?.payment == 'free' ? ' (Free)' : ' (Paid)',
-                        style: const TextStyle(
-                          color: Colors.green,
-                        ),
-                      ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 25),
-                  const Text(
-                    'Modules:',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.left,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:
-                        mentor.selectedModules.asMap().entries.map((entry) {
-                      int index = entry.key + 1;
-                      String module = entry.value;
-                      return Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ListTile(
-                            title: Text('$index. $module',
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w400)),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: SizedBox(
-                              width: 87,
-                              height: 27,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  // Handle record action
-                                },
-                                child: const Text('Record',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                              ),
+                        children:
+                            mentor.selectedModules.asMap().entries.map((entry) {
+                          int index = entry.key + 1;
+                          String module = entry.value;
+                          String? description;
+
+                          if (mentorCourse?.descriptions.isNotEmpty ?? false) {
+                            description = mentorCourse?.descriptions[entry.key];
+                          }
+
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: ExpansionTileCard(
+                              initialPadding: EdgeInsets.zero,
+                              title: Text('$index. $module',
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400)),
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                                  padding: const EdgeInsets.only(left: 20),
+                                                  child: Text(description ?? ''),
+                                                ),
+                                ),
+                                const SizedBox(height: 12),
+                              ],
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                        ],
-                      );
-                    }).toList(),
+                          );
+                        }).toList(),
+                      ),
+                      Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: SizedBox(
+                                    width: 87,
+                                    height: 27,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Handle record action
+                                      },
+                                      child: const Text('Record',
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold)),
+                                    ),
+                                  ),
+                                ),
+                    ],
                   ),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           );
-        },
-      );
         },
       ),
     );
