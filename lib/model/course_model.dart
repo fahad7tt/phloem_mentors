@@ -6,13 +6,17 @@ class Course {
   List<String> modules;
   String payment;
   List<String> descriptions;
+  String amount;
+  List<String>? enrolledUsers;
 
   Course({
     required this.id,
     required this.name,
     required this.modules,
     required this.payment,
-    required this.descriptions
+    required this.descriptions,
+    required this.amount,
+    this.enrolledUsers
   });
 
   factory Course.fromSnapshot(DocumentSnapshot snapshot) {
@@ -20,13 +24,14 @@ class Course {
     if (data == null) {
       throw Exception("Document data is null!");
     }
-    
     return Course(
       id: snapshot.id,
       name: data['name'] ?? '', // Using ?? to provide a default value if name is null
       modules: List<String>.from(data['modules'] ?? []),
       payment: data['payment'] ?? '',
       descriptions: _getDescription(data['descriptions']),
+      amount: data['amount'] ?? '',
+      enrolledUsers: List<String>.from(data['enrolledUsers'] ?? [])
     );
   }
 
@@ -44,6 +49,8 @@ class Course {
         name: '',
         modules: [],
         payment: '',
-        descriptions: []
+        descriptions: [],
+        amount: '',
+        enrolledUsers: []
       );
 }

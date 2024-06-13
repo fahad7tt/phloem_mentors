@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:phloem_mentors/view/sign_in.dart';
+import '../sign in/sign_in.dart';
 
 class SplashScreen extends StatelessWidget {
    const SplashScreen({super.key});

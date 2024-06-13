@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "763978404775",
+    "firebase_url": "https://phloem-8a7f5-default-rtdb.firebaseio.com",
     "project_id": "phloem-8a7f5",
     "storage_bucket": "phloem-8a7f5.appspot.com"
   },
@@ -189,6 +190,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "763978404775-m9a57uoi2piif17eenpnojav5o4jgpnl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phloem_mentors",
+            "certificate_hash": "7cecdd3ad51c018dac0194d50795c9c7394d8072"
+          }
+        },
         {
           "client_id": "763978404775-28phs1or153l7d7rlnju9nq1ktkda1ju.apps.googleusercontent.com",
           "client_type": 3

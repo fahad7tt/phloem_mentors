@@ -1,11 +1,13 @@
   // ignore_for_file: avoid_print
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
   import 'package:cloud_firestore/cloud_firestore.dart';
   import 'package:phloem_mentors/model/course_model.dart';
 
   class CourseProvider extends ChangeNotifier {
+    static List<String> enrolledUser = [];
+    static String mentorCourses = '';
     final List<Course> _courses = [];
-     List<bool> _isExpandedList = [];
+     final List<bool> _isExpandedList = [];
     List<Course> get courses => _courses;
 
     List<String> getCourseNames() {
@@ -20,19 +22,32 @@
   bool isExpanded(int index) {
     return _isExpandedList[index];
   }
+
+  Future<List<String>> getEnrolledUser(String courseId) async{
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    DocumentReference docRef = firestore.collection('courses').doc(courseId);
+
+        DocumentSnapshot docSnapshot = await docRef.get();
+        if(docSnapshot.exists){
+          return List<String>.from(docSnapshot.get('enrolledUsers'));
+        }else{
+          return [];
+        }
+  }
       
     Future<void> addCourse(
-        String name, List<String> modules, String payment, List<String> descriptions) async {
+        String name, List<String> modules, String payment, List<String> descriptions, String amount) async {
       try {
         FirebaseFirestore firestore = FirebaseFirestore.instance;
         DocumentReference docRef = await firestore.collection('courses').add({
           'name': name,
           'modules': modules,
           'payment': payment,
-          'descriptions': descriptions
+          'descriptions': descriptions,
+          'amount': amount
         });
         _courses.add(Course(
-            id: docRef.id, name: name, modules: modules, payment: payment, descriptions: descriptions));
+            id: docRef.id, name: name, modules: modules, payment: payment, descriptions: descriptions, amount: amount));
         notifyListeners();
       } catch (e) {
         print('Error adding course: $e');
@@ -59,14 +74,15 @@
     }
 
     Future<void> updateCourse(Course course, String newName,
-        List<String> newModules, String newPayment, List<String> newDescriptions) async {
+        List<String> newModules, String newPayment, List<String> newDescriptions, String newAmount) async {
       try {
         FirebaseFirestore firestore = FirebaseFirestore.instance;
         await firestore.collection('courses').doc(course.id).update({
           'name': newName,
           'modules': newModules,
           'payment': newPayment,
-          'description': newDescriptions
+          'description': newDescriptions,
+          'amount' : newAmount
         });
         final index = _courses.indexOf(course);
         if (index != -1) {
@@ -75,7 +91,8 @@
               name: newName,
               modules: newModules,
               payment: newPayment,
-              descriptions: newDescriptions);
+              descriptions: newDescriptions,
+              amount: newAmount);
           notifyListeners();
         } else {
           print('Course not found');

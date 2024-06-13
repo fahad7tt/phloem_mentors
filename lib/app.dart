@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:phloem_mentors/controller/course_controller.dart';
 import 'package:phloem_mentors/controller/mentor_controller.dart';
-import 'package:phloem_mentors/view/splash_screen.dart';
+import 'package:phloem_mentors/controller/singout_controller.dart';
 import 'package:provider/provider.dart';
+import 'controller/chat_controller.dart';
 import 'controller/signin_controller.dart';
+import 'controller/videomodule_controller.dart';
+import 'view/screens/splash screen/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +16,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => MentorProvider()),
+        ChangeNotifierProvider(create: (context) => CourseProvider()),
         ChangeNotifierProvider(create: (context) => SignInController()),
+        ChangeNotifierProvider(create: (context) => ChatProvider()),
+        ChangeNotifierProvider(
+          create: (_) => VideoController(),
+          child: const MyApp(),
+        ),
+        ChangeNotifierProvider(create: (context) => AuthProvider()),
       ],
       child: MaterialApp(
         title: 'E-Learning App',
@@ -21,7 +32,6 @@ class MyApp extends StatelessWidget {
         ),
         home: Consumer<MentorProvider>(
           builder: (context, mentorProvider, _) {
-            // You can use mentorProvider here to decide which screen to show
             return const SplashScreen();
           },
         ),
