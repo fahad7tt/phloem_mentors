@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:phloem_mentors/model/users_model.dart';
-import 'package:phloem_mentors/view/mentor_home.dart';
+import 'package:phloem_mentors/view/screens/mentor/home/mentor_home.dart';
 
 class SignInController extends ChangeNotifier {
   final formKey = GlobalKey<FormState>();

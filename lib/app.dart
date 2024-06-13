@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phloem_mentors/controller/mentor_controller.dart';
-import 'package:phloem_mentors/view/splash_screen.dart';
+import 'package:phloem_mentors/view/screens/splash%20screen/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'controller/signin_controller.dart';
 
@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
         ),
         home: Consumer<MentorProvider>(
           builder: (context, mentorProvider, _) {
-            // You can use mentorProvider here to decide which screen to show
             return const SplashScreen();
           },
         ),
